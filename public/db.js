@@ -34,9 +34,6 @@ window.addEventListener("online", checkDatabase);
 
 
 
-
-
-
 function checkDatabase() {
     // open a transaction on your pending db
     const transaction = db.transaction(["pending"], "readwrite");

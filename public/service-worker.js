@@ -9,8 +9,6 @@ const FILES_TO_CACHE = [
     "/icons/icon-512x512.png",
     "manifest.webmanifest",
     "db.js",
-    "",
-    "",
 ];
 
 const CACHE_NAME = "static-cache-v2";
@@ -51,6 +49,7 @@ self.addEventListener("activate", function (evt) {
 
 // fetch
 self.addEventListener("fetch", function (evt) {
+    console.log(evt)
     if (evt.request.url.includes("/api/")) {
         evt.respondWith(
             caches.open(DATA_CACHE_NAME).then(cache => {
